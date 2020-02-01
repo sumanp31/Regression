@@ -106,7 +106,7 @@ for i in range(step):
     
 del df
 df1.drop([" _tempm", "datetime_utc", " _hail", " _snow", " _tornado", " _wdird", " _wspdm"], axis=1, inplace=True)
-df1.dropna(inplace=True)
+
 
 df1.to_csv("Weather_final1.csv" )
 
@@ -126,7 +126,7 @@ regressor = load_model("model.h5")
 predicted_temp = regressor.predict(X)
 
 from sklearn.metrics import mean_squared_error 
-print ("The mean squared error is: " + str(mean_squared_error(y, predicted_temp)))
+#print ("The mean squared error is: " + str(mean_squared_error(y, predicted_temp)))
 
 df_test = df_test[["datetime_utc", " _tempm"]]
 
